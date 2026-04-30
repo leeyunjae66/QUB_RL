@@ -9,7 +9,7 @@ class QUBCfg(LeggedRobotCfg):
     class env(LeggedRobotCfg.env):
         frame_stack = 15
         c_frame_stack = 3
-        num_actions = 17
+        num_actions = 13
         num_single_obs = 11 + 3 * num_actions
         num_observations = int(frame_stack * num_single_obs)
         single_num_privileged_obs = 25 + 4 * num_actions
@@ -72,16 +72,12 @@ class QUBCfg(LeggedRobotCfg):
             'R_Hip_pitch_joint': 0.,
             'R_Hip_roll_joint': 0.,
             'R_Hip_yaw_joint': 0.,
-            'R_Thigh_pitch_1_joint': 0.,
-            'R_Thigh_pitch_2_joint': 0.,
             'R_Thigh_pitch_3_joint': 0.,
             'R_Ankle_pitch_joint': 0.,
             'R_Ankle_roll_joint': 0.,
             'L_Hip_pitch_joint': 0.,
             'L_Hip_roll_joint': 0.,
             'L_Hip_yaw_joint': 0.,
-            'L_Thigh_pitch_1_joint': 0.,
-            'L_Thigh_pitch_2_joint': 0.,
             'L_Thigh_pitch_3_joint': 0.,
             'L_Ankle_pitch_joint': 0.,
             'L_Ankle_roll_joint': 0.,

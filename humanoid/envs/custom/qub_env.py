@@ -38,16 +38,12 @@ class QUBEnv(XBotLFreeEnv):
 
         sin_pos_l[sin_pos_l > 0] = 0
         self._set_ref_joint('L_Hip_pitch_joint', sin_pos_l * scale_1)
-        self._set_ref_joint('L_Thigh_pitch_1_joint', sin_pos_l * scale_1)
-        self._set_ref_joint('L_Thigh_pitch_2_joint', sin_pos_l * scale_2)
-        self._set_ref_joint('L_Thigh_pitch_3_joint', sin_pos_l * scale_1)
+        self._set_ref_joint('L_Thigh_pitch_3_joint', sin_pos_l * scale_2)
         self._set_ref_joint('L_Ankle_pitch_joint', -sin_pos_l * scale_1)
 
         sin_pos_r[sin_pos_r < 0] = 0
         self._set_ref_joint('R_Hip_pitch_joint', sin_pos_r * scale_1)
-        self._set_ref_joint('R_Thigh_pitch_1_joint', sin_pos_r * scale_1)
-        self._set_ref_joint('R_Thigh_pitch_2_joint', sin_pos_r * scale_2)
-        self._set_ref_joint('R_Thigh_pitch_3_joint', sin_pos_r * scale_1)
+        self._set_ref_joint('R_Thigh_pitch_3_joint', sin_pos_r * scale_2)
         self._set_ref_joint('R_Ankle_pitch_joint', -sin_pos_r * scale_1)
 
         self.ref_dof_pos[torch.abs(sin_pos) < 0.1] = 0

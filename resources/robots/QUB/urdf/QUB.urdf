@@ -318,7 +318,7 @@
   </link>
   <joint
     name="R_Thigh_pitch_1_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="-0.00888987525871127 -0.0278048877304022 -0.103494982889139"
       rpy="0 0 0" />
@@ -326,13 +326,6 @@
       link="R_Hip_yaw" />
     <child
       link="R_Thigh_pitch_1" />
-    <axis
-      xyz="0.0326305757533488 -0.999467480974746 0" />
-    <limit
-      lower="-1.57"
-      upper="1.57"
-      effort="30.0"
-      velocity="5.0" />
   </joint>
   <link
     name="R_Thigh_pitch_2">
@@ -376,7 +369,7 @@
   </link>
   <joint
     name="R_Thigh_pitch_2_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.0271373695869923 0.043408622649949 0.0280268536193671"
       rpy="0 0 0" />
@@ -384,13 +377,6 @@
       link="R_Thigh_pitch_1" />
     <child
       link="R_Thigh_pitch_2" />
-    <axis
-      xyz="0.0326305757533486 -0.999467480974746 0" />
-    <limit
-      lower="-1.57"
-      upper="1.57"
-      effort="30.0"
-      velocity="5.0" />
   </joint>
   <link
     name="R_Thigh_pitch_3">
@@ -1047,7 +1033,7 @@
   </link>
   <joint
     name="L_Thigh_pitch_1_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="-0.0097924 0.0275 -0.10349"
       rpy="0 0 -0.032636" />
@@ -1055,13 +1041,6 @@
       link="L_Hip_yaw" />
     <child
       link="L_Thigh_pitch_1" />
-    <axis
-      xyz="-0.032631 0.99947 0" />
-    <limit
-      lower="-1.57"
-      upper="1.57"
-      effort="30.0"
-      velocity="5.0" />
   </joint>
   <link
     name="L_Thigh_pitch_2">
@@ -1105,7 +1084,7 @@
   </link>
   <joint
     name="L_Thigh_pitch_2_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.029911 -0.041546 0.028027"
       rpy="0 0 0" />
@@ -1113,13 +1092,6 @@
       link="L_Thigh_pitch_1" />
     <child
       link="L_Thigh_pitch_2" />
-    <axis
-      xyz="0.032631 -0.99947 0" />
-    <limit
-      lower="-1.57"
-      upper="1.57"
-      effort="30.0"
-      velocity="5.0" />
   </joint>
   <link
     name="L_Thigh_pitch_3">
