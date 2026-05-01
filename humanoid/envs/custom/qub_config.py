@@ -31,9 +31,9 @@ class QUBCfg(LeggedRobotCfg):
         foot_name = "Ankle_roll"
         knee_name = "Thigh_pitch_3"
 
-        terminate_after_contacts_on = ["base_link", "Torso_yaw"]
-        penalize_contacts_on = ["base_link", "Torso_yaw"]
-        self_collisions = 0
+        terminate_after_contacts_on = ["base_link"]
+        penalize_contacts_on = ["base_link"]
+        self_collisions = 1
         flip_visual_attachments = False
         replace_cylinder_with_capsule = False
         fix_base_link = False
