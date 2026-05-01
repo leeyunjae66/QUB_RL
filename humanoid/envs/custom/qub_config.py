@@ -21,7 +21,7 @@ class QUBCfg(LeggedRobotCfg):
     class safety:
         pos_limit = 1.0
         vel_limit = 1.0
-        torque_limit = 0.85
+        torque_limit = 4.0
 
     class asset(LeggedRobotCfg.asset):
         file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/QUB/urdf/QUB.urdf'
@@ -124,27 +124,27 @@ class QUBCfg(LeggedRobotCfg):
             contact_collection = 2
 
     class domain_rand:
-        randomize_friction = True
+        randomize_friction = False
         friction_range = [0.1, 2.0]
-        randomize_base_mass = True
+        randomize_base_mass = False
         added_mass_range = [-2., 2.]
-        push_robots = True
+        push_robots = False
         push_interval_s = 4
         max_push_vel_xy = 0.2
         max_push_ang_vel = 0.4
-        action_delay = 0.5
-        action_noise = 0.02
+        action_delay = 0.0
+        action_noise = 0.0
 
     class commands(LeggedRobotCfg.commands):
         num_commands = 4
-        resampling_time = 8.
-        heading_command = True
+        resampling_time = 4.
+        heading_command = False
 
         class ranges:
-            lin_vel_x = [-0.2, 0.4]
-            lin_vel_y = [-0.2, 0.2]
-            ang_vel_yaw = [-0.25, 0.25]
-            heading = [-3.14, 3.14]
+            lin_vel_x = [0.2, 0.4]
+            lin_vel_y = [0.0, 0.0]
+            ang_vel_yaw = [0.0, 0.0]
+            heading = [0.0, 0.0]
 
     class rewards:
         base_height_target = 0.85
@@ -158,23 +158,23 @@ class QUBCfg(LeggedRobotCfg):
         max_contact_force = 350
 
         class scales:
-            joint_pos = 1.0
+            joint_pos = 0.4
             feet_clearance = 0.8
-            feet_contact_number = 1.0
+            feet_contact_number = 0.5
             feet_air_time = 0.8
             foot_slip = -0.05
             feet_distance = 0.2
             knee_distance = 0.1
             feet_contact_forces = -0.01
-            tracking_lin_vel = 1.0
+            tracking_lin_vel = 2.0
             tracking_ang_vel = 0.8
             vel_mismatch_exp = 0.5
-            low_speed = 0.2
-            track_vel_hard = 0.4
-            default_joint_pos = 0.4
-            orientation = 1.
+            low_speed = 0.8
+            track_vel_hard = 1.0
+            default_joint_pos = 0.2
+            orientation = 0.6
             base_height = 0.2
-            base_acc = 0.2
+            base_acc = 0.05
             action_smoothness = -0.002
             torques = -1e-5
             dof_vel = -5e-4
