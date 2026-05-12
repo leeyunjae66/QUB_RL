@@ -72,6 +72,11 @@ class QUBEnv(XBotLFreeEnv):
         actions += self.cfg.domain_rand.action_noise * torch.randn_like(actions) * actions
         return LeggedRobot.step(self, actions)
 
+    def check_termination(self):
+        self.reset_buf = self.root_states[:, 2] < self.cfg.rewards.base_height_termination
+        self.time_out_buf = self.episode_length_buf > self.max_episode_length
+        self.reset_buf |= self.time_out_buf
+
     def _reward_default_joint_pos(self):
         joint_diff = self.dof_pos - self.default_joint_pd_target
         yaw_roll_names = (
