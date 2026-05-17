@@ -141,7 +141,7 @@ class QUBCfg(LeggedRobotCfg):
         heading_command = False
 
         class ranges:
-            lin_vel_x = [0.05, 0.3]
+            lin_vel_x = [0.25, 0.5]
             lin_vel_y = [0.0, 0.0]
             ang_vel_yaw = [0.0, 0.0]
             heading = [0.0, 0.0]
@@ -159,7 +159,7 @@ class QUBCfg(LeggedRobotCfg):
         max_contact_force = 350
 
         class scales:
-            joint_pos = 0.8
+            joint_pos = 0.4
             feet_clearance = 0.5
             feet_contact_number = 0.8
             feet_air_time = 0.5
@@ -167,13 +167,13 @@ class QUBCfg(LeggedRobotCfg):
             feet_distance = 0.2
             knee_distance = 0.1
             feet_contact_forces = -0.01
-            tracking_lin_vel = 1.3
+            tracking_lin_vel = 2.5
             tracking_ang_vel = 0.8
             vel_mismatch_exp = 0.5
-            low_speed = 0.35
-            track_vel_hard = 0.5
-            default_joint_pos = 0.5
-            orientation = 1.2
+            low_speed = 0.8
+            track_vel_hard = 1.0
+            default_joint_pos = 0.2
+            orientation = 0.8
             base_height = 0.2
             base_acc = 0.15
             action_smoothness = -0.004
@@ -208,9 +208,9 @@ class QUBCfgPPO(LeggedRobotCfgPPO):
         critic_hidden_dims = [768, 256, 128]
 
     class algorithm(LeggedRobotCfgPPO.algorithm):
-        entropy_coef = 0.001
-        learning_rate = 1e-5
-        num_learning_epochs = 2
+        entropy_coef = 0.005
+        learning_rate = 3e-4
+        num_learning_epochs = 5
         gamma = 0.994
         lam = 0.9
         num_mini_batches = 4
